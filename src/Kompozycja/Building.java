@@ -32,7 +32,7 @@ public class Building {
         int roomNo;
         int roomFloor;
 
-        public Room(int roomNo, int roomFloor) {
+        private Room(int roomNo, int roomFloor) {
             this.roomNo = roomNo;
             this.roomFloor = roomFloor;
         }
