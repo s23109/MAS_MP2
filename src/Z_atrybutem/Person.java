@@ -37,7 +37,7 @@ public class Person {
     }
 
     public void showResults(){
-        System.out.println("STUDENT:");
+        System.out.println("Person:");
         System.out.println(this);
         for (Results results : courseResults) {
             System.out.println(results.course);

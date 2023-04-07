@@ -1,3 +1,5 @@
+import Kwalifikowana.Book;
+import Kwalifikowana.Page;
 import Z_atrybutem.Course;
 import Z_atrybutem.Person;
 import Zwykla.Car;
@@ -28,6 +30,16 @@ public class Main {
 
         System.out.println("+++++++++++++++++++++++");
         System.out.println("Asocjacja kwalifikowana");
-        
+        Book book = new Book("JAVA");
+        Page page = new Page("JDBC",1,"bla bla bla ");
+        book.addPage(page);
+        try {
+            System.out.println(book.findPage(1));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+
     }
 }
