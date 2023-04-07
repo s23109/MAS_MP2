@@ -1,5 +1,10 @@
+import Z_atrybutem.Kurs;
+import Z_atrybutem.Osoba;
 import Zwykla.Car;
 import Zwykla.Driver;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +23,11 @@ public class Main {
         System.out.println("+++++++++++++++++++++++");
         System.out.println("Asocjacja z atrybutem");
 
-        
+        Osoba osoba = new Osoba("Adam",3);
+        Kurs kurs = new Kurs("JAVA-Podstawy", BigDecimal.valueOf(200.00));
+        osoba.addKurs("2", LocalDate.now(),kurs);
+        osoba.showWyniki();
 
+        kurs.showOsoby();
     }
 }
