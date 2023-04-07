@@ -37,7 +37,7 @@ public class Main {
         try {
             System.out.println(book.findPage(1));
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
         book.showPages();
 
@@ -48,15 +48,14 @@ public class Main {
             building.addRoom(1,1);
             building.addRoom(2,1);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
-
+        building.showRooms();
         try {
             building.addRoom(2,1);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
-        
 
 
     }

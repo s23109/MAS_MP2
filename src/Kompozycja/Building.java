@@ -16,7 +16,7 @@ public class Building {
     }
 
     public void addRoom (int roomNo, int roomFloor) throws Exception {
-        if (this.rooms.stream().anyMatch(e -> e.roomNo == roomNo)){
+        if (this.rooms.stream().anyMatch(e -> e.roomNo == roomNo && e.roomFloor == roomFloor)){
             throw new Exception("Room number already used");
         }else {
             this.rooms.add(new Room(roomNo,roomFloor));
@@ -26,6 +26,12 @@ public class Building {
 
     public Building(String adress) {
         this.adress = adress;
+    }
+
+    public void showRooms(){
+        for (Room r: rooms) {
+            System.out.println(r);
+        }
     }
 
     private class Room{
@@ -46,7 +52,6 @@ public class Building {
         }
 
     }
-
     @Override
     public String toString() {
         return "Building{" +
