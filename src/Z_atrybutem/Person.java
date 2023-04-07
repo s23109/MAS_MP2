@@ -7,7 +7,7 @@ import java.util.List;
 public class Person {
     String name;
     int semester;
-    public List<Person> extent = new ArrayList<>();
+    public static List<Person> extent = new ArrayList<>();
     public List<Results> courseResults = new ArrayList<>();
 
     private void addExtent(Person d) {

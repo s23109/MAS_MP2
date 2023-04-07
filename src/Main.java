@@ -1,3 +1,4 @@
+import Kompozycja.Building;
 import Kwalifikowana.Book;
 import Kwalifikowana.Page;
 import Z_atrybutem.Course;
@@ -38,7 +39,24 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        book.showPages();
 
+        System.out.println("+++++++++++++++++++++++");
+        System.out.println("Kompozycja");
+        Building building = new Building("123 street");
+        try {
+            building.addRoom(1,1);
+            building.addRoom(2,1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            building.addRoom(2,1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        
 
 
     }

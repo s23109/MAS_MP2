@@ -9,7 +9,7 @@ public class Page {
     public Book book;
     String content;
 
-    List<Page> extent = new ArrayList<>();
+    static List<Page>  extent = new ArrayList<>();
 
     private void addExtent(Page d) {
         extent.add(d);

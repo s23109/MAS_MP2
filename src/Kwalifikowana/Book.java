@@ -9,7 +9,7 @@ public class Book {
     public String name;
 
     public Map<Integer, Page> pages = new TreeMap<>();
-    public List<Book> extent = new ArrayList<>();
+    public static List<Book> extent = new ArrayList<>();
 
     private void addExtent(Book d) {
         extent.add(d);
@@ -39,6 +39,14 @@ public class Book {
         }else {
             return pages.get(pagenum);
         }
+    }
+
+    public void showPages(){
+
+        for (Page p : pages.values()) {
+            System.out.println(p);
+        }
+
     }
 
     @Override

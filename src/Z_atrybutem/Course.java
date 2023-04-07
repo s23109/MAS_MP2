@@ -9,7 +9,7 @@ public class Course {
     String name;
     BigDecimal price;
 
-    public List<Course> extent = new ArrayList<>();
+    public static List<Course> extent = new ArrayList<>();
     public List<Results> resultsOfParticipants = new ArrayList<>();
 
     private void addExtent(Course d) {
