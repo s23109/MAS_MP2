@@ -15,12 +15,23 @@ public class Building {
         extent.remove(d);
     }
 
-    public void addRoom (int roomNo, int roomFloor) throws Exception {
+    public void createRoom(int roomNo, int roomFloor) throws Exception {
         if (this.rooms.stream().anyMatch(e -> e.roomNo == roomNo && e.roomFloor == roomFloor)){
             throw new Exception("Room number already used");
         }else {
-            this.rooms.add(new Room(roomNo,roomFloor));
+            Room.createRoom(roomNo,roomFloor,this);
         }
+
+    }
+
+    public void addRoom(Room room){
+        if (!rooms.contains(room)){
+            rooms.add(room);
+        }
+    }
+
+    public Room getRoomByAtt(int roomNo, int roomFloor){
+        return rooms.stream().filter(e -> e.roomFloor == roomFloor && e.roomNo == roomNo).findFirst().orElse(null);
 
     }
 
@@ -34,29 +45,13 @@ public class Building {
         }
     }
 
-    private class Room{
-        int roomNo;
-        int roomFloor;
 
-        private Room(int roomNo, int roomFloor) {
-            this.roomNo = roomNo;
-            this.roomFloor = roomFloor;
-        }
 
-        @Override
-        public String toString() {
-            return "Room{" +
-                    "roomNo=" + roomNo +
-                    ", roomFloor=" + roomFloor +
-                    '}';
-        }
 
-    }
     @Override
     public String toString() {
         return "Building{" +
-                "adress='" + adress + '\'' +
-                ", rooms=" + rooms +
+                "adress='" + adress + '\''+
                 '}';
     }
 }

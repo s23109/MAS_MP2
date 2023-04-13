@@ -32,8 +32,10 @@ public class Person {
 
     public void addCourse(String ocena, LocalDate data_wystawienia, Course course){
         Results results = new Results(this, course,ocena,data_wystawienia);
-        this.courseResults.add(results);
-        course.resultsOfParticipants.add(results);
+    }
+
+    public Results getResultFor(Course course){
+        return courseResults.stream().filter(e -> e.course == course).findFirst().orElse(null);
     }
 
     public void showResults(){

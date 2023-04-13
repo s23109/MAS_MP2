@@ -16,6 +16,9 @@ public class Results {
         this.course = course;
         this.grade = grade;
         this.date = date;
+
+        person.courseResults.add(this);
+        course.resultsOfParticipants.add(this);
     }
 
     @Override

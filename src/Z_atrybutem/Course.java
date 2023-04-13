@@ -43,9 +43,12 @@ public class Course {
 
     public void addPerson(String ocena, LocalDate data_wystawienia, Person person){
         Results results = new Results(person,this,ocena,data_wystawienia);
-        this.resultsOfParticipants.add(results);
-        person.courseResults.add(results);
     }
+
+    public Results getResultFor(Person person){
+        return resultsOfParticipants.stream().filter(e -> e.person == person).findFirst().orElse(null);
+    }
+
 
     @Override
     public String toString() {
