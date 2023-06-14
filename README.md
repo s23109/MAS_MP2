@@ -1,1 +1,1 @@
-# MAS_MP2 ; Kompozycja ,,zwykła'', z atrybutem , kwalifikowana, kompozycja
+# MAS_MP2 ; Asocjacja ,,zwykła'', z atrybutem , kwalifikowana, kompozycja
